@@ -18,3 +18,35 @@ h1{
     padding:20px;
     color: #000000;
 }
+
+
+/* MAIN CONTENUTO PRINCIPALE */
+main{
+    background-image: url(../img/cork.png);
+    width: 100%;
+    /* DEBUG */
+    /* height: 100%; */
+}
+
+
+
+ .contenitore_grande{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width:100%;
+    
+} 
+
+.contenitore_polaroid{
+
+    width:25%;
+    background-color: white;
+    margin:20px;
+}
+
+
+img{
+    width:100%;
+   
+} 
