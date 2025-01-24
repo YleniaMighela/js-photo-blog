@@ -29,23 +29,54 @@ const contenitore_grande = document.querySelector ('.contenitore_grande');
 axios.get('https://lanciweb.github.io/demo/api/pictures/')
 
 .then(risposta =>{
-// da questo console log riesco a visualiazzare l'array di oggetti e le sue proprietà
+    // da questo console log riesco a visualiazzare l'array di oggetti e le sue proprietà
     // console.log(risposta);
-
-
-    // per capire come è composta l'array, creo una costante cui valore è dato dalla funzione e dall'estrapolazione della proprietà i, questione
-
+    
+    
+    // per capire come è composta l'array, creo una costante cui valore è dato dalla funzione e dall'estrapolazione della proprietà in questione
+    
     const arrayData = risposta.data;
     // console.log(arrayData);
     
-
-    // una volta estrapolato l'array
-    // attraverso un ciclo tiro fuori ogni elemento
+    
+    // una volta estrapolato l'array,
+    // attraverso un ciclo, tiro fuori ogni elemento
     for(let i = 0; i < arrayData.length; i++){
         let dataIesimo = arrayData[i];
         console.log(dataIesimo);
         
-    }
-}
+        
+        
+        // una volta visualizzato come è composto l'array, per prendere le proprietà che mi servono, la destrutturo salvandomi le proprietà in una costante 
+        
+        const { title, date, url} = dataIesimo;
+        // console.log(id, title, date, url);
+        
+        
 
-)
+        // selezionando l'elemento preso dal Dom e assegnandogli il metodo INNERHTML,faccio sì che passo l'intera struttura dell'html, con l'utilizzo del += si aggiungono i contenitori polaroid finché il ciclo continua a funzionare all'interno dell'array
+        contenitore_grande.innerHTML += 
+        `
+    
+         <div class="contenitore_polaroid">
+            
+                
+                <img src=${url}>
+            
+                <div class="didascalia">
+                    <p class="date">${date}</p>
+                    <h2 class="font">${title}</h2>
+                </div>
+                
+                <div class="puntina_rossa">
+                    <img id="pin" src="img/pin.svg" alt="">
+                 </div>
+                 
+           </div>
+    `
+
+        
+    };
+    
+   
+});
