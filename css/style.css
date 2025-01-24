@@ -12,6 +12,7 @@ header{
 
 h1{
     font-family: 'Edu Tas Beginner', sans-serif;
+    font-size: 50px;
     font-weight: bold;
     font-size: 75px;
     text-align: center;
@@ -20,33 +21,70 @@ h1{
 }
 
 
+/* FONT */
+.font{
+    font-family: 'Edu Tas Beginner', sans-serif;
+    font-size: 25px;
+}
+
+.date{
+    font-family: 'Sometype Mono', monospace;
+    color:#7d7b79;
+    font-size: 15px;
+}
+
+
 /* MAIN CONTENUTO PRINCIPALE */
-main{
+
+body{
     background-image: url(../img/cork.png);
-    width: 100%;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+
+.contenitore_grande{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width:75%;
+    gap: 20px;
+    padding:40px 20px;
+} 
+
+.contenitore_polaroid{
+    
+    width:25%;
+    background-color: white;
+    padding: 20px;
+    gap:20px;
+    position: relative;
     /* DEBUG */
     /* height: 100%; */
 }
 
 
+/* SEZIONE POLAROID */
 
- .contenitore_grande{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.contenitore_polaroid img{
     width:100%;
+    
     
 } 
 
-.contenitore_polaroid{
-
-    width:25%;
-    background-color: white;
-    margin:20px;
+.didascalia{
+    padding:10px;
 }
 
+#pin{
+    width:30px;
+}
+.puntina_rossa{
+position: absolute;
+top: 0;
+left: 45%;
 
-img{
-    width:100%;
-   
-} 
+}
