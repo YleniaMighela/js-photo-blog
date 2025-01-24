@@ -1,3 +1,20 @@
-body{
-    background-color: rgb(226, 141, 43);
+*{
+    margin:0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+header{
+    background-image: url(../img/wall.png);
+    height: 130px;
+}
+
+h1{
+    font-family: 'Edu Tas Beginner', sans-serif;
+    font-weight: bold;
+    font-size: 75px;
+    text-align: center;
+    padding:20px;
+    color: #000000;
 }

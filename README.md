@@ -7,7 +7,7 @@ Sfruttando gli screen e gli asset in allegato riproduciamo la grafica proposta i
 
 Milestone 2
 Utilizzando Postman, testiamo una chiamata a questo endpoint:
-https://lanciweb.github.io/demo/api/pictures/
+
 Studiamo bene la risposta e i dati che ci fornisce iniziando a pensare a come poterli sfruttare.
 
 
