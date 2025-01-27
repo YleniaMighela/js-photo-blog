@@ -155,7 +155,10 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
     // dopodicè apro un altro evento relativo al bottone in cui al momento del click (sul bottone) si chiude l'overlay e l'img    
    
     
-
+    bottone.addEventListener('click', () => {
+        
+        overlay.classList.add('d_none');
+    });
 
    
 });
