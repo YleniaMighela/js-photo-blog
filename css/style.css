@@ -69,7 +69,7 @@ main{
 
 /* SEZIONE POLAROID */
 
-.contenitore_polaroid img{
+.contenitore_polaroid  .img_polaroid {
     width:100%;
     
     
@@ -82,6 +82,8 @@ main{
 #pin{
     width:30px;
 }
+
+
 .puntina_rossa{
 position: absolute;
 top: 0;
@@ -98,7 +100,15 @@ left: 45%;
     position: fixed;
     top:0;
     right: 0;
+    display: none;
 }
+
+/* 
+.d_none{
+    display: none;
+   
+} */
+
 
 .contenitore_click{
     position: relative;
@@ -107,7 +117,16 @@ left: 45%;
 
 #button{
     position: absolute;
-    top:10px;
+    top:40px;
+    left:50%;
+    font-size: 25px;
+    width: 90px;
+    height: 40px;
 }
 
 
+.immagine_aperta{
+    position: absolute;
+    top:100px;
+    left:40%;
+}
