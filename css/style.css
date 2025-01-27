@@ -70,6 +70,7 @@ main{
 /* SEZIONE POLAROID */
 
 .contenitore_polaroid  .img_polaroid {
+    cursor: pointer;
     width:100%;
     
     
@@ -100,14 +101,14 @@ left: 45%;
     position: fixed;
     top:0;
     right: 0;
-    display: none;
+    /* display: none; */
 }
 
-/* 
+
 .d_none{
     display: none;
    
-} */
+} 
 
 
 .contenitore_click{
