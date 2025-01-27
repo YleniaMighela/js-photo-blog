@@ -65,7 +65,7 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
             
                 <div class="didascalia">
                     <p class="date">${date}</p>
-                    <h2 class="font">${title}</h2>
+                    <h2 class="font">${title.toUpperCase()}</h2>
                 </div>
                 
                 <div class="puntina_rossa">

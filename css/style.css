@@ -50,16 +50,16 @@ main{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width:75%;
+    max-width:55%;
     gap: 20px;
     padding:40px 20px;
 } 
 
 .contenitore_polaroid{
     
-    width:25%;
+    width:30%;
     background-color: white;
-    padding: 20px;
+    padding: 15px;
     gap:20px;
     position: relative;
     /* DEBUG */
@@ -88,3 +88,8 @@ top: 0;
 left: 45%;
 
 }
+
+
+
+
+
