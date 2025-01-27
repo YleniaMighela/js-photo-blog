@@ -79,7 +79,7 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
         
         // una volta visualizzato come è composto l'array, per prendere le proprietà che mi servono, la destrutturo salvandomi le proprietà in una costante 
         
-        const { title, date, url} = dataIesimo;
+        const {title, date, url} = dataIesimo;
         // console.log(id, title, date, url);
         
         
@@ -120,7 +120,34 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
     // creo un ciclo in modo da raggiungere l'elemento iesimo all'interno della costante imgPolaroid
     for(let i = 0; i < imgPolaroid.length; i++){
         let imgIesima = imgPolaroid[i];
-    console.log(imgIesima);
+    // console.log(imgIesima);
+
+
+    imgIesima.addEventListener('click', () => {
+        // se all'interno della node list (imgIesima) contiene la classe (img_polaroid)
+
+        if(imgIesima.classList.contains('img_polaroid')){
+
+            //mi salvo il valore src in una costante
+
+            const imgSrc = imgIesima.src;
+            // console.log(imgSrc);
+            
+
+            //  seleziono l'immgine che si trova all'interno del contenitore overlay
+            const overlayImg = overlay.querySelector('img');
+
+            // console.log(overlayImg);
+
+
+            // dopodichè trascrivo il src" con l'immagine cliccata
+            overlayImg.src = imgSrc;
+     
+        }
+    //  rimuovo la classe display none
+
+        overlay.classList.remove('d_none');
+    });
     
     };
     
