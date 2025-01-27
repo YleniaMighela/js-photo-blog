@@ -45,13 +45,14 @@
 const contenitore_grande = document.querySelector ('.contenitore_grande');
 // console.log(contenitore_grande);
 
-const imgPolaroid = document.querySelector(".img_polaroid");
-// console.log(imgPolaroid);
-
 
 const bottone = document.querySelector('#button');
 // console.log(bottone);
 
+
+
+
+const overlay = document.querySelector('.overlay');
 
 
 // Axios(libreria) ci permette di fare una chiamata AJAX
@@ -82,7 +83,7 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
         // console.log(id, title, date, url);
         
         
-
+        
         // selezionando l'elemento preso dal Dom e assegnandogli il metodo INNERHTML,faccio sì che passo l'intera struttura dell'html, con l'utilizzo del += si aggiungono i contenitori polaroid finché il ciclo continua a funzionare all'interno dell'array
         contenitore_grande.innerHTML += 
         `
@@ -97,7 +98,7 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
                     <p class="date">${date}</p>
                     <h2 class="font">${title.toUpperCase()}</h2>
                 </div>
-
+        
                   <!-- puntina rossa -->
                 <div class="puntina_rossa">
                     <img id="pin" src="img/pin.svg" alt="">
@@ -107,16 +108,27 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
     };
     
     
-
-
-
-
+    
+    
+    
+    
     // creo un evento in cui al momento del click della foto si apre l'overlay con al suo interno l'immagine grande in questione
+    
+    // salvo in una costante l'elemento di output
+    const imgPolaroid = document.querySelectorAll('.img_polaroid');
 
-                  
-
+    // creo un ciclo in modo da raggiungere l'elemento iesimo all'interno della costante imgPolaroid
+    for(let i = 0; i < imgPolaroid.length; i++){
+        let imgIesima = imgPolaroid[i];
+    console.log(imgIesima);
+    
+    };
+    
+    
     // dopodicè apro un altro evento relativo al bottone in cui al momento del click (sul bottone) si chiude l'overlay e l'img    
+   
     
 
-    
+
+   
 });
