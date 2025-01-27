@@ -45,6 +45,12 @@
 const contenitore_grande = document.querySelector ('.contenitore_grande');
 // console.log(contenitore_grande);
 
+const imgPolaroid = document.querySelector(".img_polaroid");
+// console.log(imgPolaroid);
+
+
+const bottone = document.querySelector('#button');
+// console.log(bottone);
 
 
 
@@ -100,13 +106,17 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
     `
     };
     
-   
+    
 
 
 
 
+    // creo un evento in cui al momento del click della foto si apre l'overlay con al suo interno l'immagine grande in questione
 
+                  
 
+    // dopodicè apro un altro evento relativo al bottone in cui al momento del click (sul bottone) si chiude l'overlay e l'img    
+    
 
     
 });
