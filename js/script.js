@@ -19,17 +19,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 // MILESTONE 2 
 // attraverso l'utilizzo di postman verifico che all'interno dell'API è contenuta un array di oggetti
 
@@ -40,15 +29,12 @@
 
 
 
-// seleziono l'elemento di Output dal DOM
+// seleziono l'elemento di Output dal DOM, che mi servirà da contenitore per la struttura dell' HTML
 
 const contenitore_grande = document.querySelector ('.contenitore_grande');
 // console.log(contenitore_grande);
 
 
-const bottone = document.querySelector('#button');
-// console.log(bottone);
-const overlay = document.querySelector('.overlay');
 
 
 // Axios(libreria) ci permette di fare una chiamata AJAX
@@ -76,29 +62,32 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
         // una volta visualizzato come è composto l'array, per prendere le proprietà che mi servono, la destrutturo salvandomi le proprietà in una costante 
         
         const {title, date, url} = dataIesimo;
-        // console.log(id, title, date, url);
+        // console.log( title, date, url);
         
         
         
         // selezionando l'elemento preso dal Dom e assegnandogli il metodo INNERHTML,faccio sì che passo l'intera struttura dell'html, con l'utilizzo del += si aggiungono i contenitori polaroid finché il ciclo continua a funzionare all'interno dell'array
+
         contenitore_grande.innerHTML += 
         `
     
-     <div class="contenitore_polaroid">
+                 <div class="contenitore_polaroid">
                 
-                <!-- foto -->
-                <img src=${url} alt="" class="img_polaroid">
+                        <!-- foto -->
+                        <img src=${url} alt="" class="img_polaroid">
+                        
+                        <!-- descrizione della foto -->
+                        <div class="didascalia">
+                            <p class="date">${date}</p>
+                            <h2 class="font">${title.toUpperCase()}</h2>
+                        </div>
                 
-                 <!-- descrizione della foto -->
-                   <div class="didascalia">
-                    <p class="date">${date}</p>
-                    <h2 class="font">${title.toUpperCase()}</h2>
-                </div>
-        
-                  <!-- puntina rossa -->
-                <div class="puntina_rossa">
-                    <img id="pin" src="img/pin.svg" alt="">
-                 </div>
+                        <!-- puntina rossa -->
+                        <div class="puntina_rossa">
+                            <img id="pin" src="img/pin.svg" alt="">
+                        </div>
+
+                 <!-- </div> -->
     
     `
     };
@@ -109,54 +98,69 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
     
     
     // creo un evento in cui al momento del click della foto si apre l'overlay con al suo interno l'immagine grande in questione
-    
-    // salvo in una costante l'elemento di output
-    const imgPolaroid = document.querySelectorAll('.img_polaroid');
 
-    // creo un ciclo in modo da raggiungere l'elemento iesimo all'interno della costante imgPolaroid
+    
+    // selezione gli elementi di output che mi servono per estrapolare le immagini
+    const imgPolaroid = document.querySelectorAll('.img_polaroid');
+    
+    const overlay = document.querySelector('.overlay');
+    
+    
+    
+    // creo un ciclo in modo da raggiungere l'elemento iesimo dell'array imgPolaroid
     for(let i = 0; i < imgPolaroid.length; i++){
         let imgIesima = imgPolaroid[i];
-    // console.log(imgIesima);
-
-
-    imgIesima.addEventListener('click', () => {
-        // se all'interno della node list (imgIesima) contiene la classe (img_polaroid)
-
-        if(imgIesima.classList.contains('img_polaroid')){
-
-            //mi salvo il valore src in una costante
-
-            const imgSrc = imgIesima.src;
-            // console.log(imgSrc);
+        // console.log(imgIesima);
+        
+        // trovata la singola immagiine genero un evento click
+        imgIesima.addEventListener('click', () => {
             
+            // mi salvo il percorso dell'immagine
+            imgSrc = imgIesima.src;
+            
+            
+            // selezionando l'elemento preso dal Dom e assegnandogli il metodo INNERHTML,faccio sì che passo l'intera struttura dell'html. Con l'utilizzo del = mi andrà a trascrivere l'html con l' immagine finché il ciclo continua a funzionare all'interno dell'array
+            
+            overlay.innerHTML = 
+            
+            `
+              <div class="contenitore_click">
+                    <button id="button">Chiudi</button>
+                    <img src=${imgSrc} alt="" class="immagine_aperta">
+                </div> 
+        
+            
+            
+            `;
+            
+            //  rimuovo la classe display none
+            
+            overlay.classList.remove('d_none');
 
-            //  seleziono l'immgine che si trova all'interno del contenitore overlay
-            const overlayImg = overlay.querySelector('img');
 
-            // console.log(overlayImg);
+            // dopodicè creo un altro evento relativo al bottone, prendendomi l'emento di Output dal DOM,  in cui al momento del click (sul bottone) si chiude l'overlay e l'img    
 
-
-            // dopodichè trascrivo il src" con l'immagine cliccata
-            overlayImg.src = imgSrc;
-     
-        }
-    //  rimuovo la classe display none
-
-        overlay.classList.remove('d_none');
-    });
+            const bottone = document.querySelector('#button');
+            
+            bottone.addEventListener('click', () => {
+                
+                overlay.classList.add('d_none');
+            });
+            
+            
+            
+        });   //  FINE ADDEVENET LISTENER
+        
+        
+        
+    }; // FINE FOR
     
-    };
     
     
-    // dopodicè apro un altro evento relativo al bottone in cui al momento del click (sul bottone) si chiude l'overlay e l'img    
-   
     
-    bottone.addEventListener('click', () => {
-
-        overlay.classList.add('d_none');
-    });
-
-   
-});
+    
+    
+    
+});   //  FINE THEN
 
 
