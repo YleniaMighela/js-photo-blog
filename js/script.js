@@ -48,10 +48,6 @@ const contenitore_grande = document.querySelector ('.contenitore_grande');
 
 const bottone = document.querySelector('#button');
 // console.log(bottone);
-
-
-
-
 const overlay = document.querySelector('.overlay');
 
 
@@ -156,9 +152,11 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
    
     
     bottone.addEventListener('click', () => {
-        
+
         overlay.classList.add('d_none');
     });
 
    
 });
+
+

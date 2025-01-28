@@ -50,7 +50,7 @@ main{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    max-width:55%;
+    max-width:70%;
     gap: 20px;
     padding:40px 20px;
 } 
@@ -134,3 +134,43 @@ left: 45%;
     width:600px;
     height: 600px;
 }
+
+
+
+
+/* MEDIA QUERY */
+/* versione tablet */
+@media screen and (max-width:1200px) and (min-width: 880px){
+    .contenitore_grande{
+     
+        max-width:100%;
+      
+    } 
+    
+    
+        .contenitore_polaroid{
+        
+            width:45%;
+          
+        }
+
+}
+
+
+/* versione mobile */
+@media screen and (max-width: 879px){
+
+    
+    .contenitore_grande{
+     
+        max-width:100%;
+      
+    } 
+    
+    
+        .contenitore_polaroid{
+        
+            width:60%;
+          
+        }
+    }
