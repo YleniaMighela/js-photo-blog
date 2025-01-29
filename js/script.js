@@ -67,7 +67,7 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
         
         
         // selezionando l'elemento preso dal Dom e assegnandogli il metodo INNERHTML,faccio sì che passo l'intera struttura dell'html, con l'utilizzo del += si aggiungono i contenitori polaroid finché il ciclo continua a funzionare all'interno dell'array
-
+        
         contenitore_grande.innerHTML += 
         `
     
@@ -86,7 +86,7 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
                         <div class="puntina_rossa">
                             <img id="pin" src="img/pin.svg" alt="">
                         </div>
-
+        
                  <!-- </div> -->
     
     `
@@ -98,7 +98,7 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
     
     
     // creo un evento in cui al momento del click della foto si apre l'overlay con al suo interno l'immagine grande in questione
-
+    
     
     // selezione gli elementi di output che mi servono per estrapolare le immagini
     const imgPolaroid = document.querySelectorAll('.img_polaroid');
@@ -112,34 +112,41 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
         let imgIesima = imgPolaroid[i];
         // console.log(imgIesima);
         
-        // trovata la singola immagiine genero un evento click
+        // inizializzo una variabile che mi servirà all'interno della condizione
+        let imgSrc;
+
+
+        // trovata la singola immagine genero un evento click
         imgIesima.addEventListener('click', () => {
             
-            // mi salvo il percorso dell'immagine
-            imgSrc = imgIesima.src;
-            
-            
-            // selezionando l'elemento preso dal Dom e assegnandogli il metodo INNERHTML,faccio sì che passo l'intera struttura dell'html. Con l'utilizzo del = mi andrà a trascrivere l'html con l' immagine finché il ciclo continua a funzionare all'interno dell'array
-            
-            overlay.innerHTML = 
-            
-            `
-              <div class="contenitore_click">
-                    <button id="button">Chiudi</button>
-                    <img src=${imgSrc} alt="" class="immagine_aperta">
-                </div> 
-        
-            
-            
-            `;
-            
-            //  rimuovo la classe display none
-            
-            overlay.classList.remove('d_none');
+            //creo un condizione in cui se IMGSRC è uguale al percorso dell'elementoIesimo immagine
+            if (imgSrc = imgIesima.src){
 
-
+                // allora selezionando l'elemento preso dal Dom e assegnandogli il metodo INNERHTML,faccio sì che passo l'intera struttura dell'html. Con l'utilizzo del = mi andrà a trascrivere l'html con l' immagine finché il ciclo continua a funzionare all'interno dell'array
+                
+                overlay.innerHTML = 
+                
+                `
+                    <div class="contenitore_click">
+                        <button id="button">Chiudi</button>
+                        <img src=${imgSrc} alt="" class="immagine_aperta">
+                    </div> 
+                                
+  
+  
+                `;
+                
+                //  dopdichè rimuovo la classe display none
+                
+                overlay.classList.remove('d_none');
+            };
+            
+            
+            
+            
+            
             // dopodicè creo un altro evento relativo al bottone, prendendomi l'emento di Output dal DOM,  in cui al momento del click (sul bottone) si chiude l'overlay e l'img    
-
+            
             const bottone = document.querySelector('#button');
             
             bottone.addEventListener('click', () => {
