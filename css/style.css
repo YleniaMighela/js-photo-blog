@@ -121,7 +121,7 @@ left: 45%;
 #button{
     position: absolute;
     top:40px;
-    left:48%;
+    left:45%;
     font-size: 25px;
     width: 90px;
     height: 40px;
@@ -132,7 +132,7 @@ left: 45%;
 .immagine_aperta{
     position: absolute;
     top:100px;
-    left:35%;
+    left:30%;
     width:600px;
     height: 600px;
 }
@@ -156,6 +156,15 @@ left: 45%;
           
         }
 
+
+        .immagine_aperta{
+           left:25%;
+        }
+
+        #button{
+            left:45%;
+        }
+
 }
 
 
@@ -175,4 +184,14 @@ left: 45%;
             width:60%;
           
         }
+
+        .immagine_aperta{
+            left:10%;
+         }
+
+
+         #button{
+            left:41%;
+        }
+
     }
