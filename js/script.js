@@ -31,7 +31,7 @@
 
 // seleziono l'elemento di Output dal DOM, che mi servirà da contenitore per la struttura dell' HTML
 
-const contenitore_grande = document.querySelector ('.contenitore_grande');
+const contenitore_grande = document.querySelector('.contenitore_grande');
 // console.log(contenitore_grande);
 
 
@@ -120,7 +120,7 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
         imgIesima.addEventListener('click', () => {
             
             //creo un condizione in cui se IMGSRC è uguale al percorso dell'elementoIesimo immagine
-            if (imgSrc = imgIesima.src){
+          imgSrc = imgIesima.src
 
                 // allora selezionando l'elemento preso dal Dom e assegnandogli il metodo INNERHTML,faccio sì che passo l'intera struttura dell'html. Con l'utilizzo del = mi andrà a trascrivere l'html con l' immagine finché il ciclo continua a funzionare all'interno dell'array
                 
@@ -139,8 +139,8 @@ axios.get('https://lanciweb.github.io/demo/api/pictures/')
                 //  dopdichè rimuovo la classe display none
                 
                 overlay.classList.remove('d_none');
-            };
-            
+    
+
             
             
             
